@@ -17,7 +17,7 @@ import {
   View,
 } from 'react-native';
 
-import TextToSpeechScreen from './src/pages/TextToSpeechScreen'
+import TtsContainer from './src/pages/container/TtsContainer'
 
 import {
   Colors,
@@ -66,7 +66,7 @@ function App(): JSX.Element {
 
   return (
     <SafeAreaView>
-      <TextToSpeechScreen></TextToSpeechScreen>
+      <TtsContainer></TtsContainer>
     </SafeAreaView>
   );
 }

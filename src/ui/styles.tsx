@@ -43,4 +43,8 @@ export const styles = StyleSheet.create({
       textAlign: 'center',
       height: 40,
     },
+    selectionList: {
+      width: '100%',
+      marginTop: 5
+    }
   });

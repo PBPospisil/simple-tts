@@ -5,6 +5,7 @@ export const styles = StyleSheet.create({
       flex: 1,
       flexDirection: 'column',
       padding: 5,
+      backgroundColor: 'white'
     },
     titleText: {
       fontSize: 22,
@@ -15,10 +16,13 @@ export const styles = StyleSheet.create({
       justifyContent: 'center',
       marginTop: 15,
       padding: 10,
-      backgroundColor: '#8ad24e',
+      backgroundColor: 'azure',
+      borderRadius: 10,
+      borderColor: 'gray',
+      borderWidth: 1,
     },
     buttonTextStyle: {
-      color: '#fff',
+      color: 'black',
       textAlign: 'center',
     },
     sliderContainer: {
@@ -38,13 +42,19 @@ export const styles = StyleSheet.create({
     textInput: {
       borderColor: 'gray',
       borderWidth: 1,
-      color: 'white',
+      borderRadius: 10,
       width: '100%',
       textAlign: 'center',
       height: 40,
     },
     selectionList: {
       width: '100%',
-      marginTop: 5
-    }
+      marginTop: 5, 
+    },
+    voiceListItemDefault: {
+      backgroundColor: 'white'
+    },
+    voiceListItemSelected: {
+      backgroundColor: 'aquamarine'
+    },
   });

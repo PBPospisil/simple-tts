@@ -19,7 +19,7 @@ import { Voice } from "react-native-tts"
 
 const TtsContainer = () =>
 {
-    const [text, setText] = useState('Enter Text')
+    const [text, setText] = useState('')
     const [ttsStatus, setTtsStatus] = useState<TtsStatus>(TtsStatus.Initializing)
     const [voiceSpeed, setVoiceSpeed] = useState<number>(0.5)
     const [voicePitch, setVoicePitch] = useState<number>(1)

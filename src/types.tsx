@@ -62,3 +62,9 @@ export enum TtsStatus {
     Initializing = 'initializing',
     Initialized = 'initialized'
 }
+
+export enum TtsEventListener {
+    Start = 'tts-start',
+    Finish = 'tts-finish',
+    Cancel = 'tts-cancel'
+}

@@ -2,17 +2,17 @@ import { Component, Dispatch, SetStateAction } from "react"
 import Tts from 'react-native-tts'
 import { TtsEventListener, TtsStatus } from "../types"
 
-export const getVoices = () =>
+export const getVoices = async () =>
 {
     return Tts.voices()
 }
 
-export const setDefaultLanguage = (language: string) =>
+export const setDefaultLanguage = async (language: string) =>
 {
     Tts.setDefaultLanguage(language)
 }
 
-export const setDefaultVoice = (voice: string) =>
+export const setDefaultVoice = async (voice: string) =>
 {
     Tts.setDefaultVoice(voice)
 }
@@ -41,12 +41,12 @@ export const addCancelEventListener = (setTtsStatus: Dispatch<SetStateAction<Tts
     )
 }
 
-export const setDefaultSpeed = (speed: number) =>
+export const setDefaultSpeed = async (speed: number) =>
 {
     Tts.setDefaultRate(speed)
 }
 
-export const setDefaultPitch = (pitch: number) =>
+export const setDefaultPitch = async (pitch: number) =>
 {
     Tts.setDefaultPitch(pitch)
 }

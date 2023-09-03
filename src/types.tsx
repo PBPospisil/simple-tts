@@ -1,4 +1,5 @@
 import { Dispatch } from "react"
+import { Voice } from "react-native-tts"
 
 // Interfaces
 export interface SliderCallback {
@@ -10,7 +11,7 @@ export interface ReadTextCallback {
 }
 
 export interface VoiceSelectCallback {
-    (voice: string): void
+    (voice: Voice): void
 }
 
 // Types

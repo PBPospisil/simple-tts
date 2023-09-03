@@ -38,7 +38,7 @@ export const styles = StyleSheet.create({
     textInput: {
       borderColor: 'gray',
       borderWidth: 1,
-      color: 'black',
+      color: 'white',
       width: '100%',
       textAlign: 'center',
       height: 40,

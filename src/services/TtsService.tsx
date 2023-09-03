@@ -1,25 +1,25 @@
-import { Dispatch, SetStateAction } from "react"
+import { Component, Dispatch, SetStateAction } from "react"
 import Tts from 'react-native-tts'
 import { TtsEventListener, TtsStatus } from "../types"
 
-const TtsService = () => 
+class TtsService extends Component<void>
 {
-    const getVoices = () =>
+    getVoices()
     {
         return Tts.voices()
     }
 
-    const setDefaultLanguage = (language: string) =>
+    setDefaultLanguage(language: string)
     {
         Tts.setDefaultLanguage(language)
     }
 
-    const setDefaultVoice = (voice: string) =>
+    setDefaultVoice(voice: string)
     {
         Tts.setDefaultVoice(voice)
     }
 
-    const addStartEventListener = (setTtsStatus: Dispatch<SetStateAction<TtsStatus>>) =>
+    addStartEventListener(setTtsStatus: Dispatch<SetStateAction<TtsStatus>>)
     {
         Tts.addEventListener(
             TtsEventListener.Start,
@@ -27,7 +27,7 @@ const TtsService = () =>
         )
     }
 
-    const addFinishEventListener = (setTtsStatus: Dispatch<SetStateAction<TtsStatus>>) =>
+    addFinishEventListener(setTtsStatus: Dispatch<SetStateAction<TtsStatus>>)
     {
         Tts.addEventListener(
             TtsEventListener.Finish,
@@ -35,7 +35,7 @@ const TtsService = () =>
         )
     }
 
-    const addCancelEventListener = (setTtsStatus: Dispatch<SetStateAction<TtsStatus>>) =>
+    addCancelEventListener(setTtsStatus: Dispatch<SetStateAction<TtsStatus>>)
     {
         Tts.addEventListener(
             TtsEventListener.Cancel,
@@ -43,22 +43,22 @@ const TtsService = () =>
         )
     }
 
-    const setDefaultSpeed = (speed: number) =>
+    setDefaultSpeed(speed: number)
     {
         Tts.setDefaultRate(speed)
     }
 
-    const setDefaultPitch = (pitch: number) =>
+    setDefaultPitch(pitch: number)
     {
         Tts.setDefaultPitch(pitch)
     }
 
-    const getInitStatus = (initTts: ((value: "success") => "success" | PromiseLike<"success">) | null | undefined) =>
+    getInitStatus(): Promise<"success">
     {
-        Tts.getInitStatus().then(initTts)
+        return Tts.getInitStatus()
     }
 
-    const removeStartEventListener = (setTtsStatus: Dispatch<SetStateAction<TtsStatus>>) =>
+    removeStartEventListener(setTtsStatus: Dispatch<SetStateAction<TtsStatus>>)
     {
         Tts.removeEventListener(
             TtsEventListener.Start,
@@ -66,7 +66,7 @@ const TtsService = () =>
         )
     }
 
-    const removeFinishEventListener = (setTtsStatus: Dispatch<SetStateAction<TtsStatus>>) =>
+    removeFinishEventListener(setTtsStatus: Dispatch<SetStateAction<TtsStatus>>)
     {
         Tts.removeEventListener(
             TtsEventListener.Finish,
@@ -74,7 +74,7 @@ const TtsService = () =>
         )
     }
 
-    const removeCancelEventListener = (setTtsStatus: Dispatch<SetStateAction<TtsStatus>>) =>
+    removeCancelEventListener(setTtsStatus: Dispatch<SetStateAction<TtsStatus>>)
     {
         Tts.removeEventListener(
             TtsEventListener.Cancel,
@@ -82,13 +82,15 @@ const TtsService = () =>
         )
     }
 
-    const stopVoiceRead = () =>
+    stopVoiceRead()
     {
         Tts.stop()
     }
 
-    const startVoiceRead = (text: string) =>
+    startVoiceRead(text: string)
     {
         Tts.speak(text)
     }
 }
+
+export default TtsService

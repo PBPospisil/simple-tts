@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react"
 import TtsPresenter from "../presenter/TtsPresenter"
 import { ReadTextCallback, SliderCallback, TtsStatus, VoiceSelectCallback } from "../../types"
-import { getVoices,
-         setDefaultLanguage,
-         setDefaultVoice,
-         addStartEventListener,
+import { addCancelEventListener,
          addFinishEventListener,
-         addCancelEventListener,
-         setDefaultSpeed,
-         setDefaultPitch,
+         addStartEventListener,
          getInitStatus,
-         removeStartEventListener,
-         removeFinishEventListener,
+         getVoices,
          removeCancelEventListener,
-         stopVoiceRead,
-         startVoiceRead } from "../../services/tts"
+         removeFinishEventListener,
+         removeStartEventListener,
+         setDefaultLanguage,
+         setDefaultPitch,
+         setDefaultSpeed,
+         setDefaultVoice,
+         startVoiceRead,
+         stopVoiceRead } from "../../services/tts"
 
 const TtsContainer = () =>
 {

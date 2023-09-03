@@ -11,7 +11,7 @@ const VoiceSelectionList = (props: SelectionListProps) =>
     const VoiceListItem = (item: Voice) =>
     (
       <TouchableOpacity
-        style={{ backgroundColor: selectedVoice === item.id ? '#DDA0DD' : '#5F9EA0' }}
+        style={[ selectedVoice === item.id ? styles.voiceListItemSelected : styles.voiceListItemDefault ]}
         onPress={() => onVoicePress(item)}>
         <Text style={styles.buttonTextStyle}>
           {`${item.language} - ${item.name || item.id}`}

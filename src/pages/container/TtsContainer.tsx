@@ -1,7 +1,20 @@
 import React, { useEffect, useState } from "react"
 import TtsPresenter from "../presenter/TtsPresenter"
 import { ReadTextCallback, SliderCallback, TtsStatus, VoiceSelectCallback } from "../../types"
-import TtsService from "../../services/TtsService"
+import { getVoices,
+         setDefaultLanguage,
+         setDefaultVoice,
+         addStartEventListener,
+         addFinishEventListener,
+         addCancelEventListener,
+         setDefaultSpeed,
+         setDefaultPitch,
+         getInitStatus,
+         removeStartEventListener,
+         removeFinishEventListener,
+         removeCancelEventListener,
+         stopVoiceRead,
+         startVoiceRead } from "../../services/tts"
 
 const TtsContainer = () =>
 {
@@ -13,20 +26,18 @@ const TtsContainer = () =>
     const [selectedVoice, setSelectedVoice] = useState(null)
 
     useEffect(() => {
-        const ttsService = new TtsService()
-
-        ttsService.addStartEventListener(setTtsStatus)
-        ttsService.addFinishEventListener(setTtsStatus)
-        ttsService.addCancelEventListener(setTtsStatus)
+        addStartEventListener(setTtsStatus)
+        addFinishEventListener(setTtsStatus)
+        addCancelEventListener(setTtsStatus)
         
-        ttsService.setDefaultSpeed(voiceSpeed)
-        ttsService.setDefaultPitch(voicePitch)
+        setDefaultSpeed(voiceSpeed)
+        setDefaultPitch(voicePitch)
 
-        ttsService.getInitStatus().then(initTts)
+        getInitStatus().then(initTts)
         return () => {
-            ttsService.removeStartEventListener(setTtsStatus)
-            ttsService.removeFinishEventListener(setTtsStatus)
-            ttsService.removeCancelEventListener(setTtsStatus)
+            removeStartEventListener(setTtsStatus)
+            removeFinishEventListener(setTtsStatus)
+            removeCancelEventListener(setTtsStatus)
         }}, [])
 
     const initTts = async () => {}

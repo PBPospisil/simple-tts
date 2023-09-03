@@ -11,6 +11,8 @@ const VoiceTextInput = (props: TextInputProps) =>
           style={styles.textInput}
           onChangeText={(text) => setText(text)}
           value={text}
+          placeholder={'Enter text'}
+          placeholderTextColor={'black'}
           onSubmitEditing={Keyboard.dismiss}
         />
     )

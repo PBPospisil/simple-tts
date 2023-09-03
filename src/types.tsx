@@ -1,21 +1,33 @@
+import { Dispatch } from "react"
+
 // Interfaces
 export interface SliderCallback {
     (value: number): void
-}
-
-export interface TextInputCallback {
-    (text: string): void
 }
 
 export interface ReadTextCallback {
     (): void
 }
 
+export interface VoiceSelectCallback {
+    (voice: string): void
+}
+
 // Types
+export type SpeedSliderProps = {
+    voiceSpeed: number;
+    onSpeechSpeedChange: SliderCallback;
+}
+
+export type PitchSliderProps = {
+    voicePitch: number;
+    onSpeechPitchChange: SliderCallback;
+}
+
 export type SelectionListProps = {
     voices: any;
     selectedVoice: any;
-    onVoicePress: any;
+    onVoicePress: VoiceSelectCallback;
 }
 
 export type ListItemProps = {
@@ -26,17 +38,27 @@ export type ListItemProps = {
 
 export type TextInputProps = {
     text: string;
-    setText: TextInputCallback;
+    setText: Dispatch<React.SetStateAction<string>>;
 }
 
 export type ReadTextButtonProps = {
     ttsStatus: TtsStatus;
-    readText: ReadTextCallback;
+    onReadText: ReadTextCallback;
+}
+
+export type TtsPresenterProps = {
+    textInputProps: TextInputProps;
+    readTextButtonProps: ReadTextButtonProps;
+    voiceSpeedSliderProps: SpeedSliderProps;
+    voicePitchSliderProps: PitchSliderProps;
+    selectionListProps: SelectionListProps;
 }
 
 // Enums
 export enum TtsStatus {
     Started = 'started',
     Finished = 'finished',
-    Cancelled = 'cancelled'
+    Cancelled = 'cancelled',
+    Initializing = 'initializing',
+    Initialized = 'initialized'
 }

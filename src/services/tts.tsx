@@ -89,3 +89,8 @@ export const startVoiceRead = (text: string) =>
 {
     Tts.speak(text)
 }
+
+export const setIgnoreSilentSwitch = async (ignoreSilentSwitch: boolean) =>
+{
+    Tts.setIgnoreSilentSwitch(ignoreSilentSwitch)
+}

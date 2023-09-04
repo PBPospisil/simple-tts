@@ -19,6 +19,7 @@ const VoiceSpeedSlider = (props: SpeedSliderProps) =>
             maximumValue={0.99}
             value={voiceSpeed}
             onSlidingComplete={onSpeechSpeedChange}
+            step={0.1}
           />
         </View>
     )

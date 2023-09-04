@@ -16,21 +16,14 @@ import { addCancelEventListener,
          startVoiceRead,
          stopVoiceRead } from "../../services/tts"
 import { Voice } from "react-native-tts"
-import { TextInput } from "react-native"
 
 const TtsContainer = () =>
 {
-    const [text, setText] = useState('')
     const [ttsStatus, setTtsStatus] = useState<TtsStatus>(TtsStatus.Initializing)
     const [voiceSpeed, setVoiceSpeed] = useState<number>(0.5)
     const [voicePitch, setVoicePitch] = useState<number>(1)
     const [voices, setVoices] = useState<Voice[]>([])
     const [selectedVoice, setSelectedVoice] = useState<string>('')
-
-    const inputRef = useRef<TextInput>(null)
-    const editText = useCallback(() => {
-      inputRef.current?.setNativeProps({text: ''})
-    }, [])
 
     useEffect(() => {
         addStartEventListener(setTtsStatus)
@@ -101,7 +94,7 @@ const TtsContainer = () =>
 
     return (
         <TtsPresenter
-            textInputProps={{ onReadText }}
+            textInputProps={{ ttsStatus, onReadText }}
             voiceSpeedSliderProps={{ voiceSpeed, onSpeechSpeedChange }}
             voicePitchSliderProps={{ voicePitch, onSpeechPitchChange }}
             selectionListProps={{ voices, selectedVoice, onVoicePress }} />

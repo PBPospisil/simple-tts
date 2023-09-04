@@ -5,11 +5,9 @@ import { VoiceTextProps } from "../types"
 import ClearTextButton from "./ClearTextButton"
 import ReadTextButton from "./ReadTextButton"
 
-const VoiceText = (props: VoiceTextProps) =>
+const VoiceText = ({ ttsStatus, onReadText }: VoiceTextProps) =>
 {
-    let { onReadText } = props
     const [text, setText] = useState<string>('')
-
     const onClearText = () => 
     {
       setText('')
@@ -29,7 +27,8 @@ const VoiceText = (props: VoiceTextProps) =>
           <ClearTextButton 
             onClearText={onClearText}
           />
-          <ReadTextButton 
+          <ReadTextButton
+            ttsStatus={ttsStatus}
             text={text}
             onReadText={onReadText}
           />

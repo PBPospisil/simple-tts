@@ -1,15 +1,20 @@
 import React from "react"
 import { Text, TouchableOpacity } from "react-native"
 import { styles } from "../ui/styles"
-import { ReadTextButtonProps } from "../types"
+import { ReadTextButtonProps, TtsStatus } from "../types"
 
-const ReadTextButton = (props: ReadTextButtonProps) => 
+const ReadTextButton = ({ ttsStatus, text, onReadText }: ReadTextButtonProps) => 
 {
-    let { text, onReadText } = props
+    const isDisabled = (): boolean => 
+    {
+      return ttsStatus == TtsStatus.Started
+    }
+
     return (
         <TouchableOpacity
-          style={styles.buttonStyle}
-          onPress={() => onReadText(text)}>
+          style={[ !isDisabled() ? styles.buttonStyle : styles.disabledButtonStyle ]}
+          onPress={() => onReadText(text)}
+          disabled={isDisabled()}>
           <Text style={styles.buttonTextStyle}>
             Read text
           </Text>

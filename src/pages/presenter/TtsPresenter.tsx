@@ -7,13 +7,11 @@ import VoiceSelectionList from '../../components/VoiceSelectionList'
 import { TtsPresenterProps } from '../../types'
 import VoiceText from '../../components/VoiceText'
 
-const TtsPresenter = (props: TtsPresenterProps) => 
-{
-    let { textInputProps, 
-          voiceSpeedSliderProps, 
-          voicePitchSliderProps, 
-          selectionListProps } = props
-          
+const TtsPresenter = ({ textInputProps, 
+                        voiceSpeedSliderProps, 
+                        voicePitchSliderProps, 
+                        selectionListProps }: TtsPresenterProps) => 
+{          
     return (
         <View style={styles.container}>
             <TouchableOpacity 
@@ -21,6 +19,7 @@ const TtsPresenter = (props: TtsPresenterProps) =>
                 style={styles.textInputTouchable}
                 activeOpacity={1} >
                 <VoiceText
+                    ttsStatus={textInputProps.ttsStatus}
                     onReadText={textInputProps.onReadText} />
                 <VoiceSpeedSlider 
                     voiceSpeed={voiceSpeedSliderProps.voiceSpeed} 

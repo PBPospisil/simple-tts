@@ -5,13 +5,13 @@ import { ReadTextButtonProps } from "../types"
 
 const ReadTextButton = (props: ReadTextButtonProps) => 
 {
-    let { ttsStatus, onReadText } = props
+    let { text, onReadText } = props
     return (
         <TouchableOpacity
-        style={styles.buttonStyle}
-        onPress={onReadText}>
+          style={styles.buttonStyle}
+          onPress={() => onReadText(text)}>
           <Text style={styles.buttonTextStyle}>
-            Click to Read Text ({`Status: ${ttsStatus || ''}`})
+            Read text
           </Text>
         </TouchableOpacity>
     )

@@ -45,7 +45,13 @@ export const styles = StyleSheet.create({
       borderRadius: 10,
       width: '100%',
       textAlign: 'center',
-      height: 40,
+      justifyContent: 'center',
+      height: 100,
+      fontSize: 18,
+      padding: 4,
+    },
+    textInputTouchable: {
+      flex: 1
     },
     selectionList: {
       width: '100%',

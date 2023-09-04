@@ -14,6 +14,8 @@ const VoiceTextInput = (props: TextInputProps) =>
           placeholder={'Enter text'}
           placeholderTextColor={'black'}
           onSubmitEditing={Keyboard.dismiss}
+          multiline={true}
+          scrollEnabled={true}
         />
     )
 }

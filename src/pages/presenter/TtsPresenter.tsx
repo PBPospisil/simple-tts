@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native'
+import { Keyboard, TouchableOpacity, View } from 'react-native'
 import { styles } from '../../ui/styles'
 import VoiceTextInput from '../../components/VoiceTextInput'
 import ReadTextButton from '../../components/ReadTextButton'
@@ -18,22 +18,27 @@ const TtsPresenter = (props: TtsPresenterProps) =>
           
     return (
         <View style={styles.container}>
-            <VoiceTextInput 
-                text={textInputProps.text} 
-                setText={textInputProps.setText} />
-            <ReadTextButton 
-                ttsStatus={readTextButtonProps.ttsStatus} 
-                onReadText={readTextButtonProps.onReadText} />
-            <VoiceSpeedSlider 
-                voiceSpeed={voiceSpeedSliderProps.voiceSpeed} 
-                onSpeechSpeedChange={voiceSpeedSliderProps.onSpeechSpeedChange} />
-            <VoicePitchSlider 
-                voicePitch={voicePitchSliderProps.voicePitch} 
-                onSpeechPitchChange={voicePitchSliderProps.onSpeechPitchChange} />
-            <VoiceSelectionList 
-                voices={selectionListProps.voices} 
-                selectedVoice={selectionListProps.selectedVoice} 
-                onVoicePress={selectionListProps.onVoicePress} />
+            <TouchableOpacity 
+                onPress={Keyboard.dismiss} 
+                style={styles.textInputTouchable}
+                activeOpacity={1} >
+                <VoiceTextInput 
+                    text={textInputProps.text} 
+                    setText={textInputProps.setText} />
+                <ReadTextButton 
+                    ttsStatus={readTextButtonProps.ttsStatus} 
+                    onReadText={readTextButtonProps.onReadText} />
+                <VoiceSpeedSlider 
+                    voiceSpeed={voiceSpeedSliderProps.voiceSpeed} 
+                    onSpeechSpeedChange={voiceSpeedSliderProps.onSpeechSpeedChange} />
+                <VoicePitchSlider 
+                    voicePitch={voicePitchSliderProps.voicePitch} 
+                    onSpeechPitchChange={voicePitchSliderProps.onSpeechPitchChange} />
+                <VoiceSelectionList 
+                    voices={selectionListProps.voices} 
+                    selectedVoice={selectionListProps.selectedVoice} 
+                    onVoicePress={selectionListProps.onVoicePress} />
+            </TouchableOpacity>
         </View>
     )
 }

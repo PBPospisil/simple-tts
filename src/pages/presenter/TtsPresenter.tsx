@@ -1,17 +1,15 @@
 import React from 'react'
 import { Keyboard, TouchableOpacity, View } from 'react-native'
 import { styles } from '../../ui/styles'
-import VoiceTextInput from '../../components/VoiceTextInput'
-import ReadTextButton from '../../components/ReadTextButton'
 import VoiceSpeedSlider from '../../components/VoiceSpeedSlider'
 import VoicePitchSlider from '../../components/VoicePitchSlider'
 import VoiceSelectionList from '../../components/VoiceSelectionList'
 import { TtsPresenterProps } from '../../types'
+import VoiceText from '../../components/VoiceText'
 
 const TtsPresenter = (props: TtsPresenterProps) => 
 {
     let { textInputProps, 
-          readTextButtonProps, 
           voiceSpeedSliderProps, 
           voicePitchSliderProps, 
           selectionListProps } = props
@@ -22,12 +20,8 @@ const TtsPresenter = (props: TtsPresenterProps) =>
                 onPress={Keyboard.dismiss} 
                 style={styles.textInputTouchable}
                 activeOpacity={1} >
-                <VoiceTextInput 
-                    text={textInputProps.text} 
-                    setText={textInputProps.setText} />
-                <ReadTextButton 
-                    ttsStatus={readTextButtonProps.ttsStatus} 
-                    onReadText={readTextButtonProps.onReadText} />
+                <VoiceText
+                    onReadText={textInputProps.onReadText} />
                 <VoiceSpeedSlider 
                     voiceSpeed={voiceSpeedSliderProps.voiceSpeed} 
                     onSpeechSpeedChange={voiceSpeedSliderProps.onSpeechSpeedChange} />

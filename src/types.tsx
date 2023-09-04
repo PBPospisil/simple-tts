@@ -1,4 +1,5 @@
-import { Dispatch } from "react"
+import { Dispatch, RefObject, SetStateAction } from "react"
+import { TextInput } from "react-native"
 import { Voice } from "react-native-tts"
 
 // Interfaces
@@ -7,7 +8,7 @@ export interface SliderCallback {
 }
 
 export interface ReadTextCallback {
-    (): void
+    (text: string): void
 }
 
 export interface VoiceSelectCallback {
@@ -37,19 +38,21 @@ export type ListItemProps = {
     language: string;
 }
 
-export type TextInputProps = {
-    text: string;
-    setText: Dispatch<React.SetStateAction<string>>;
-}
-
-export type ReadTextButtonProps = {
-    ttsStatus: TtsStatus;
+export type VoiceTextProps = {
     onReadText: ReadTextCallback;
 }
 
+export type ReadTextButtonProps = {
+    text: string;
+    onReadText: ReadTextCallback;
+}
+
+export type ClearTextButtonProps = {
+    onClearText: () => void;
+}
+
 export type TtsPresenterProps = {
-    textInputProps: TextInputProps;
-    readTextButtonProps: ReadTextButtonProps;
+    textInputProps: VoiceTextProps;
     voiceSpeedSliderProps: SpeedSliderProps;
     voicePitchSliderProps: PitchSliderProps;
     selectionListProps: SelectionListProps;

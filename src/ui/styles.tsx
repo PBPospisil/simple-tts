@@ -29,8 +29,9 @@ export const styles = StyleSheet.create({
       flexDirection: 'row',
       justifyContent: 'center',
       alignItems: 'center',
-      width: 300,
-      padding: 5,
+      width: 400,
+      paddingHorizontal: 20,
+      paddingVertical: 6
     },
     sliderLabel: {
       textAlign: 'center',
@@ -46,9 +47,9 @@ export const styles = StyleSheet.create({
       width: '100%',
       textAlign: 'center',
       justifyContent: 'center',
-      height: 100,
-      fontSize: 18,
-      padding: 4,
+      height: 80,
+      fontSize: 20,
+      padding: 20,
     },
     textInputTouchable: {
       flex: 1

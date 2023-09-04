@@ -21,6 +21,15 @@ export const styles = StyleSheet.create({
       borderColor: 'gray',
       borderWidth: 1,
     },
+    disabledButtonStyle: {
+      justifyContent: 'center',
+      marginTop: 15,
+      padding: 10,
+      backgroundColor: 'gainsboro',
+      borderRadius: 10,
+      borderColor: 'gray',
+      borderWidth: 1,
+    },
     buttonTextStyle: {
       color: 'black',
       textAlign: 'center',

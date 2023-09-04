@@ -39,10 +39,12 @@ export type ListItemProps = {
 }
 
 export type VoiceTextProps = {
+    ttsStatus: TtsStatus;
     onReadText: ReadTextCallback;
 }
 
 export type ReadTextButtonProps = {
+    ttsStatus: TtsStatus;
     text: string;
     onReadText: ReadTextCallback;
 }

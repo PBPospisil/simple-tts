@@ -1,4 +1,4 @@
-package com.tts;
+package com.pbpospisil.texttospeech.simple;
 
 import android.app.Application;
 import com.facebook.react.PackageList;
@@ -8,6 +8,9 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.defaults.DefaultNewArchitectureEntryPoint;
 import com.facebook.react.defaults.DefaultReactNativeHost;
 import com.facebook.soloader.SoLoader;
+import com.tts.BuildConfig;
+import com.tts.ReactNativeFlipper;
+
 import java.util.List;
 
 public class MainApplication extends Application implements ReactApplication {

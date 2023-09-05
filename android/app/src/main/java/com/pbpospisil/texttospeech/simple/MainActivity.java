@@ -1,4 +1,4 @@
-package com.tts;
+package com.pbpospisil.texttospeech.simple;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

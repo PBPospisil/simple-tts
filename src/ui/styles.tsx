@@ -98,10 +98,10 @@ export const styles = StyleSheet.create({
     selectVoiceText: { 
       fontWeight: "600", 
       fontSize: 20, 
-      height: 20, 
+      height: 24, 
       marginTop: 16, 
-      marginBottom: 4, 
+      marginBottom: 8, 
       color: 'black', 
-      alignSelf: 'center'
+      alignSelf: 'center',
     }
   });

@@ -75,7 +75,7 @@ android {
 
     namespace "com.tts"
     defaultConfig {
-        applicationId "com.tts"
+        applicationId "com.pbpospisil.texttospeech.simple"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

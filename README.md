@@ -77,3 +77,5 @@ To learn more about React Native, take a look at the following resources:
 - [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
 - [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
 - [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+
+Icon by Image by <a href="https://www.freepik.com/free-photo/announce-loudly-with-plastic-megaphone_19924292.htm#page=3&query=text%20to%20speech&position=35&from_view=search&track=ais">Freepik</a>

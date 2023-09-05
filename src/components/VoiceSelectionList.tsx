@@ -1,5 +1,5 @@
 import React from "react"
-import { FlatList, Text, TouchableOpacity } from "react-native"
+import { FlatList, Text, TouchableOpacity, View } from "react-native"
 import { styles } from "../ui/styles"
 import { ListItemProps, SelectionListProps } from "../types"
 import { Voice } from "react-native-tts"
@@ -13,7 +13,7 @@ const VoiceSelectionList = (props: SelectionListProps) =>
       <TouchableOpacity
         style={[ selectedVoice === item.id ? styles.voiceListItemSelected : styles.voiceListItemDefault ]}
         onPress={() => onVoicePress(item)}>
-        <Text style={styles.buttonTextStyle}>
+        <Text style={styles.voiceItemText}>
           {`${item.language} - ${item.name || item.id}`}
         </Text>
       </TouchableOpacity>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Keyboard, TouchableOpacity, View } from 'react-native'
+import { Keyboard, Text, TouchableOpacity, View } from 'react-native'
 import { styles } from '../../ui/styles'
 import VoiceSpeedSlider from '../../components/VoiceSpeedSlider'
 import VoicePitchSlider from '../../components/VoicePitchSlider'
@@ -27,6 +27,10 @@ const TtsPresenter = ({ textInputProps,
                 <VoicePitchSlider 
                     voicePitch={voicePitchSliderProps.voicePitch} 
                     onSpeechPitchChange={voicePitchSliderProps.onSpeechPitchChange} />
+                <Text 
+                    style={styles.selectVoiceText}>
+                    Select a voice
+                </Text>
                 <VoiceSelectionList 
                     voices={selectionListProps.voices} 
                     selectedVoice={selectionListProps.selectedVoice} 

@@ -3,8 +3,6 @@ A simple text-to-speech app made in React Native using <a href="https://github.c
 
 The goal of this project was the implementation of React Native TTS in a mobile application for iOS and Android with a focus on clean UI, stable and intuitive UX.
 
-## Screenshots
-# Feature Graphic
 ![feature-graphic](https://github.com/PBPospisil/tts/assets/21959159/3d3708d3-ea40-4699-8867-7559e8eec488)
 
 ### Android
